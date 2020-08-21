@@ -1,5 +1,4 @@
 var $ = (id) => {
     return document.getElementById(id);
 }
-
-var ctx;
+var dc = (tag) => { return document.createElement(tag); };
