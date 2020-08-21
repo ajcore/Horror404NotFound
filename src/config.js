@@ -49,3 +49,4 @@ var viewDist = (screenWidth/2) / Math.tan((fov / 2));
 var twoPI = Math.PI * 2;
 var screenStrips = [];
 var numTextures = 4;
+var imgUrl = "";

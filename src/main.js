@@ -3,6 +3,7 @@
   //set the map Width and Height
   mapWidth = map[0].length;
   mapHeight = map.length;
+  generateImage();
 
   //start listening for user input
   bindKeys();
@@ -44,10 +45,10 @@ function initScreen() {
       strip.style.height = "0px";
       strip.style.overflow = "hidden";
       //if the image doesn't load, it will be blue.
-      strip.style.backgroundColor = "white";
+      strip.style.backgroundColor = "grey";
       //add the image to each strip, so it can reference it to set the correct tile.
       var img = new Image();
-      // img.src = (window.opera ? "walls_19color.png" : "walls.png");
+      img.src = imgUrl;
       img.style.position = "absolute";
       img.style.left = "0px";
 
@@ -58,4 +59,24 @@ function initScreen() {
       screenStrips.push(strip);
       screen.appendChild(strip);
   }
+}
+
+var generateImage = () => {
+  var c = $("img");
+  c.width = 128;
+  c.height = 256;
+  var tc = c.getContext("2d");
+  tc.beginPath();
+  tc.fillStyle="grey";
+  tc.rect(0,0,128, 64);
+  tc.fill();
+  tc.beginPath();
+  tc.fillStyle="blue";
+  tc.rect(0,64,128, 64);
+  tc.fill();
+  tc.beginPath();
+  tc.fillStyle="red";
+  tc.rect(0,128,128, 128);
+  tc.fill();
+  imgUrl = c.toDataURL();
 }
