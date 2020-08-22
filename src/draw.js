@@ -141,18 +141,13 @@ var castSingleRay = (rayAngle, stripIndex) => {
 		strip.img.style.height = Math.floor(height * numTextures) + "px";
 		strip.img.style.width = Math.floor(width*2) +"px";
 		strip.img.style.top = -Math.floor(height * (wallType-1)) + "px";
-        
-        // if (textureX == 2)
-        // {
-        //     strip.style.backgroundColor = "blue";
-        // }
 
-		// var texX = Math.round(textureX*width);
+		var texX = Math.round(textureX*width);
 
-		// if (texX > width - stripWidth)
-		// 	texX = width - stripWidth;
+		if (texX > width - stripWidth)
+			texX = width - stripWidth;
 
-		// strip.img.style.left = -texX + "px";
+		strip.img.style.left = -texX + "px";
 	}
 }
 
