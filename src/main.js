@@ -64,19 +64,46 @@ function initScreen() {
 var generateImage = () => {
   var c = $("img");
   c.width = 128;
-  c.height = 256;
+  c.height = 192;
   var tc = c.getContext("2d");
   tc.beginPath();
-  tc.fillStyle="grey";
-  tc.rect(0,0,128, 64);
+  tc.fillStyle="#D4E6B5";
+  tc.rect(0,0,64,192);
   tc.fill();
   tc.beginPath();
-  tc.fillStyle="blue";
-  tc.rect(0,64,128, 64);
+  tc.fillStyle="#AFC97E";
+  tc.rect(64,0,128, 192);
+  tc.fill();
+  
+  for (var i=0; i <=192; i+=8)
+  {
+    tc.beginPath();
+    tc.strokeStyle="#585123";
+    tc.moveTo(0 , i);
+    tc.lineTo(128, i);
+    tc.stroke();
+  }  
+
+  tc.beginPath();
+  tc.fillStyle="#431B0F";
+  tc.rect(12,72,40, 56);
   tc.fill();
   tc.beginPath();
-  tc.fillStyle="red";
-  tc.rect(0,128,128, 128);
+  tc.rect(76,72,40, 56);
   tc.fill();
+  tc.beginPath();
+  tc.rect(12,136,40, 56);
+  tc.fill();
+  tc.beginPath();
+  tc.rect(76,136,40, 56);
+  tc.fill();
+
+  tc.fillStyle="#FFA400";
+  tc.font = "8px Arial";
+  tc.fillText("404", 26, 84);
+  tc.fillText("404", 90, 84);
+  tc.fillText("200", 26, 148);
+  tc.fillText("200", 90, 148);
+
   imgUrl = c.toDataURL();
 }
