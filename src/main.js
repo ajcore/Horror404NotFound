@@ -20,10 +20,12 @@
 
 //recursively updates game 30 times every second
 var gameCycle = () => {
+  
   //update the player character's position
   move();
   //based on the new player position, update it on the minimap
   updateMiniMap();
+  flicker();
   //update what the player sees using raycasting
   castRays();
   //recalls the gameCycle 30 times a second
