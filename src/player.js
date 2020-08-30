@@ -97,7 +97,7 @@ var doorCheck = () => {
 	} else if (r < 135 && r > 45) {
 		ry = 1;
 	}
-	console.log(Math.floor(player.x) + rx + ", " + Math.floor(player.y) + ry);
+	console.log(Math.floor(player.x)+ "+" + rx + ", " + Math.floor(player.y)+ "+" + ry);
 	if (Math.floor(player.x) + rx == x200 && Math.floor(player.y) + ry == y200) {
 		gFlag = 'w';
 		bindKeys();
