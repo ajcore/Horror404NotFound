@@ -100,3 +100,6 @@ var numTextures = 3;
 var imgUrl = "";
 //s for start, i for in progress, w for win, l for loss
 var gFlag = 's';
+
+var x200 = 0;
+var y200 = 0;

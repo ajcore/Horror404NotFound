@@ -11,5 +11,8 @@ var flicker = () => {
         if (flash > 1) {
             flash--;
         }
+        if (flash == 1) {
+            show("lose");
+        }
     }   
 }

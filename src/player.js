@@ -21,9 +21,14 @@ var isBlocking = (x, y) => {
     return (map[Math.floor(y)][Math.floor(x)] !== 0);
 }
 
+var clearKeys = () => {
+	document.onkeydown = null;
+	document.onkeyup = null;
+}
+
 // bind keyboard events to game functions (movement, etc)
 var bindKeys = () => {
-
+	clearKeys();
 	document.onkeydown = (e) => {
 		e = e || window.event;
 		if(gFlag == 's') {
@@ -31,26 +36,36 @@ var bindKeys = () => {
 				gFlag = 'i';
 			}
 		}
-		switch (e.keyCode) { // which key was pressed?
+		else if (gFlag == 'i') {
+			switch (e.keyCode) { // which key was pressed?
 
-			case 38: // up, move player forward, ie. increase speed
-				player.speed = 1;
-				break;
-
-			case 40: // down, move player backward, set negative speed
-				player.speed = -1;
-				break;
-
-			case 37: // left, rotate player left
-				player.dir = -1;
-				break;
-
-			case 39: // right, rotate player right
-				player.dir = 1;
-				break;
+				case 38: // up, move player forward, ie. increase speed
+					player.speed = 1;
+					break;
+	
+				case 40: // down, move player backward, set negative speed
+					player.speed = -1;
+					break;
+	
+				case 37: // left, rotate player left
+					player.dir = -1;
+					break;
+	
+				case 39: // right, rotate player right
+					player.dir = 1;
+					break;
+	
+				case 32:
+					doorCheck();
+					break;
+			}
+		}
+		else if (gFlag == 'w') {
+			if (e.keyCode == 32) {
+				gFlag = 'i';
+			}
 		}
 	}
-
 	document.onkeyup = (e) => {
 		e = e || window.event;
 
@@ -64,5 +79,28 @@ var bindKeys = () => {
 				player.dir = 0;
 				break;
 		}
+	}
+}
+
+var doorCheck = () => {
+	console.log("Door check");
+	var r = Math.floor(player.rot * (180/Math.PI)) % 360;
+	if (r < 0) 
+		r += 360;
+	var rx, ry = 0;
+	if (r > 315 || r < 45) {
+		rx = 1;
+	} else if (r < 315 && r > 225) {
+		ry = -1;
+	} else if (r < 225 && r > 135) {
+		rx = -1;
+	} else if (r < 135 && r > 45) {
+		ry = 1;
+	}
+	console.log(Math.floor(player.x) + rx + ", " + Math.floor(player.y) + ry);
+	if (Math.floor(player.x) + rx == x200 && Math.floor(player.y) + ry == y200) {
+		gFlag = 'w';
+		bindKeys();
+		show("win");
 	}
 }
