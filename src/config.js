@@ -71,7 +71,7 @@ var generateImage = () => {
 	tc.fillText("200", 90, 148);
   
 	imgUrl = c.toDataURL();
-  }
+}
 
 var player = {
     x: 10,
@@ -98,3 +98,5 @@ var twoPI = Math.PI * 2;
 var screenStrips = [];
 var numTextures = 3;
 var imgUrl = "";
+//s for start, i for in progress, w for win, l for loss
+var gFlag = 's';

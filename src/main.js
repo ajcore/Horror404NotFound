@@ -4,7 +4,7 @@
   mapWidth = map[0].length;
   mapHeight = map.length;
   generateImage();
-
+  setDoor();
   //start listening for user input
   bindKeys();
 
@@ -18,22 +18,25 @@
   gameCycle();
 }
 
+
 //recursively updates game 30 times every second
 var gameCycle = () => {
-  
-  //update the player character's position
-  move();
-  //based on the new player position, update it on the minimap
-  updateMiniMap();
-  flicker();
-  //update what the player sees using raycasting
-  castRays();
+  if (gFlag == 'i') {
+    start();
+    //update the player character's position
+    move();
+    //based on the new player position, update it on the minimap
+    updateMiniMap();
+    flicker();
+    //update what the player sees using raycasting
+    castRays();
+  }
   //recalls the gameCycle 30 times a second
   setTimeout(gameCycle,1000/30);
 }
 
 //This splits the screen into 80 vertical strips, it sets the image asset to each of these strips, so that laater it can be referenced, choose the correct tile, then set the size.
-function initScreen() {
+var initScreen = () => {
   //get the game screen
   var screen = $("screen");
   //for each of the 80 (4 pixel wide) strips, set the image. It's 4 pixels wide because that's how far apart each ray in the raycasting is.
@@ -60,6 +63,20 @@ function initScreen() {
       //add strip to array and then add it as a child to the screen div. Adding it to the array for easy access.
       screenStrips.push(strip);
       screen.appendChild(strip);
+  }
+}
+
+var setDoor = () => {
+  var x = map.length;
+  var y = map[0].length;
+  while(true) {
+    var a = Math.ceil(Math.random() * x);
+    var b = Math.ceil(Math.random() * y);
+    console.log(a + " " + b);
+    if(map[a][b] == 2) {
+      map[a][b] = 3;
+      break;
+    }
   }
 }
 

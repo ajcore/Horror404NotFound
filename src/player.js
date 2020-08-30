@@ -26,7 +26,11 @@ var bindKeys = () => {
 
 	document.onkeydown = (e) => {
 		e = e || window.event;
-
+		if(gFlag == 's') {
+			if (e.keyCode == 32) {
+				gFlag = 'i';
+			}
+		}
 		switch (e.keyCode) { // which key was pressed?
 
 			case 38: // up, move player forward, ie. increase speed

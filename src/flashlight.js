@@ -1,10 +1,15 @@
 var off = false;
+var flash = 100;
 var flicker = () => {
     if (off) {
         $("flashlight").classList.remove("blackout");
+        off = false;
     }
-    if(Math.ceil(Math.random() * 20) == 1) {
+    if(Math.ceil(Math.random() * flash) == 1) {
         $("flashlight").classList.add("blackout");
         off = true;
+        if (flash > 1) {
+            flash--;
+        }
     }   
 }
