@@ -82,6 +82,14 @@ var player = {
     moveSpeed: 0.1,
     rotSpeed: 6
 }
+
+var monster = {
+	x: 32,
+	y: 20,
+	s: .05,
+	r: 3
+}
+
 var mapWidth = 0;
 var mapHeight = 0;
 var miniMapScale = 8;
