@@ -21,6 +21,7 @@
 
 //recursively updates game 30 times every second
 var gameCycle = () => {
+  timer += 1;
   if (gFlag == 'i') {
     start();
     //update the player character's position
@@ -30,6 +31,7 @@ var gameCycle = () => {
     flicker();
     //update what the player sees using raycasting
     castRays();
+    playMusic();
   }
   //recalls the gameCycle 30 times a second
   setTimeout(gameCycle,1000/30);

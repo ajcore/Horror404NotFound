@@ -7,6 +7,7 @@ var flicker = () => {
     }
     if(Math.ceil(Math.random() * flash) == 1) {
         $("flashlight").classList.add("blackout");
+        playSound("flashlight");
         off = true;
         if (flash > 1) {
             flash--;

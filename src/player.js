@@ -41,6 +41,7 @@ var bindKeys = () => {
 
 				case 38: // up, move player forward, ie. increase speed
 					player.speed = 1;
+					
 					break;
 	
 				case 40: // down, move player backward, set negative speed

@@ -111,3 +111,10 @@ var gFlag = 's';
 
 var x200 = 0;
 var y200 = 0;
+var footTimer = 15;
+var timer = 0;
+var drums = [2,4,2,4,2,4,2,3,4,1,2,3,4,1,2,3,4];
+var drumIndex = 0;
+// var music = 0;
+// var music2 = 1000;
+// var music3 = 800;
