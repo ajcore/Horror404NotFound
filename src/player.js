@@ -88,16 +88,17 @@ var doorCheck = () => {
 	var r = Math.floor(player.rot * (180/Math.PI)) % 360;
 	if (r < 0) 
 		r += 360;
-	var rx, ry = 0;
-	if (r > 315 || r < 45) {
+	var rx = ry = 0;
+	if (r >= 315 || r <= 45) {
 		rx = 1;
-	} else if (r < 315 && r > 225) {
+	} else if (r < 315 && r >= 225) {
 		ry = -1;
-	} else if (r < 225 && r > 135) {
+	} else if (r < 225 && r >= 135) {
 		rx = -1;
 	} else if (r < 135 && r > 45) {
 		ry = 1;
 	}
+	console.log(x200 + ", " + y200);
 	console.log(Math.floor(player.x)+ "+" + rx + ", " + Math.floor(player.y)+ "+" + ry);
 	if (Math.floor(player.x) + rx == x200 && Math.floor(player.y) + ry == y200) {
 		gFlag = 'w';

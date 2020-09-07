@@ -72,10 +72,10 @@ var setDoor = () => {
   var x = map.length;
   var y = map[0].length;
   while(true) {
-    x200 = Math.ceil(Math.random() * x);
-    y200 = Math.ceil(Math.random() * y);
-    console.log(x200 + " " + y200);
+    x200 = rand(x);
+    y200 = rand(y);
     if(map[x200][y200] == 2) {
+      console.log(x200 + " " + y200);
       map[x200][y200] = 3;
       break;
     }
