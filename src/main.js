@@ -75,7 +75,7 @@ var setDoor = () => {
     x200 = rand(x);
     y200 = rand(y);
     if(map[x200][y200] == 2) {
-      console.log(x200 + " " + y200);
+      console.log(y200 + " " + x200);
       map[x200][y200] = 3;
       break;
     }

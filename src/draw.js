@@ -51,6 +51,8 @@ var castSingleRay = (rayAngle, stripIndex) => {
 	var wallX;
 	var wallY;
 	var wallType = 0;
+	var wallIsShaded = false;
+	var wallisHorizontal = false;
 
 	//the code below is done twice from different perspectives
 	//calculate what the slope of the ray will be
@@ -78,6 +80,10 @@ var castSingleRay = (rayAngle, stripIndex) => {
 
 			xHit = x;
 			yHit = y;
+
+			wallIsShaded = true;
+			wallisHorizontal = true;
+
 			break;
 		}
 		x += dX;
@@ -103,6 +109,8 @@ var castSingleRay = (rayAngle, stripIndex) => {
 				yHit = y;
 				wallType = map[wallY][wallX];
 				textureX = x % 1;
+				wallIsShaded = false;
+
 				if (up) textureX = 1 - textureX;
 			}
 			break;
@@ -146,6 +154,7 @@ var castSingleRay = (rayAngle, stripIndex) => {
 
 		if (texX > width - stripWidth)
 			texX = width - stripWidth;
+		texX += (wallIsShaded ? width: 0);
 
 		strip.img.style.left = -texX + "px";
 	}
