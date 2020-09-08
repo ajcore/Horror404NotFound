@@ -14,6 +14,13 @@ var flicker = () => {
         }
         if (flash == 1) {
             show("lose");
+            gFlag = 'e';
         }
     }   
+}
+
+var fCounter = () => {
+    var d = $("ui");
+    d.innerHTML = '';
+    d.append(flash + '%');
 }

@@ -61,9 +61,9 @@ var bindKeys = () => {
 					break;
 			}
 		}
-		else if (gFlag == 'w') {
+		else if (gFlag == 'e') {
 			if (e.keyCode == 32) {
-				gFlag = 'i';
+				refresh();
 			}
 		}
 	}
@@ -101,7 +101,7 @@ var doorCheck = () => {
 	console.log(y200 + ", " + x200);
 	console.log(Math.floor(player.x)+ "+" + rx + ", " + Math.floor(player.y)+ "+" + ry);
 	if (Math.floor(player.x) + rx == y200 && Math.floor(player.y) + ry == x200) {
-		gFlag = 'w';
+		gFlag = 'e';
 		bindKeys();
 		show("win");
 	}

@@ -10,3 +10,7 @@ var show = (id) => {
 var rand = (i) => {
     return Math.floor(Math.random() * i);
 }
+
+var refresh = () => {
+    location.reload();
+}

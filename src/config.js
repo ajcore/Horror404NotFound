@@ -65,10 +65,13 @@ var generateImage = () => {
   
 	tc.fillStyle="#FFA400";
 	tc.font = "8px Arial";
-	tc.fillText("404", 26, 84);
 	tc.fillText("404", 90, 84);
-	tc.fillText("200", 26, 148);
 	tc.fillText("200", 90, 148);
+
+	tc.scale(-1,1);
+	tc.fillText("404", -38, 84);
+	tc.fillText("200", -38, 148);
+	tc.scale(-1,1);
   
 	imgUrl = c.toDataURL();
 }

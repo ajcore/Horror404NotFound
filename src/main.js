@@ -32,6 +32,7 @@ var gameCycle = () => {
     //update what the player sees using raycasting
     castRays();
     playMusic();
+    fCounter();
   }
   //recalls the gameCycle 30 times a second
   setTimeout(gameCycle,1000/30);
