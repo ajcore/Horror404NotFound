@@ -86,18 +86,11 @@ var player = {
     rotSpeed: 6
 }
 
-var monster = {
-	x: 32,
-	y: 20,
-	s: .05,
-	r: 3
-}
-
 var mapWidth = 0;
 var mapHeight = 0;
 var miniMapScale = 8;
-var screenWidth = 320;
-var screenHeight = 200;
+var screenWidth = 800;
+var screenHeight = 600;
 var stripWidth = 2;
 //2 * Math.PI is a full circle (assume radius = 1), divide by 360 to get the arc length of 1 degree (hence Math.PI/180),  multiply 60, to get arc length for 60 degrees
 var fov = 60 * Math.PI / 180;
@@ -118,6 +111,3 @@ var footTimer = 15;
 var timer = 0;
 var drums = [2,4,2,4,2,4,2,3,4,1,2,3,4,1,2,3,4];
 var drumIndex = 0;
-// var music = 0;
-// var music2 = 1000;
-// var music3 = 800;

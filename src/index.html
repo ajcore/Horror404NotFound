@@ -5,13 +5,14 @@
             canvas#minimap {
                 position : absolute;
                 border: black solid 1px;
+                visibility: hidden;
             }
             canvas#minimapobjects {
                 position : absolute;
+                visibility: hidden;
             }
             canvas#img {
                 position : absolute;
-                top: 400px;
                 visibility: hidden;
             }
 
@@ -107,8 +108,6 @@
 
             div#ui{
                 position:absolute;
-                width: 100%;
-                height: 100%;
                 color: green;
                 z-index:8;
             }
@@ -119,8 +118,8 @@
 
             #screen {
                 position : relative;
-                width : 320px;
-                height : 200px;
+                width : 800px;
+                height : 600px;
                 border : 1px solid black;
                 overflow : hidden;
             }
@@ -159,7 +158,6 @@
             <canvas id="minimap"></canvas>
             <canvas id="minimapobjects"></canvas>
             <canvas id="img"></canvas>
-            <canvas id="monster"></canvas>
         </div>
     </body>
     <footer>
